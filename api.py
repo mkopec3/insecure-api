@@ -20,5 +20,9 @@ def run_command():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/system/', methods=['GET'])
+def redirect_to_system():
+    return '', 200, {'Location': '/system'}
+
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0', port=80)
